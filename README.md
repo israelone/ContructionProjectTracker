@@ -71,21 +71,22 @@ src/
 3. Create a production build with `npm run build`
 4. Preview the production build with `npm run preview`
 
-## Why It Fits An Internal Business App Role
+## GitHub Pages Base Path
 
-For a hiring manager, the value of this project is less about raw feature count and more about judgment:
+This project keeps the GitHub Pages base path in one place:
 
-- The UI shows comfort with complex business-facing layouts, not just landing pages
-- The data model reflects an understanding of operational software and domain language
-- Repetition is reduced through reusable components instead of copy-pasted screen code
-- The design choices prioritize clarity, credibility, and maintainability
-- The app feels like a product with a user and context, not just a component exercise
+- `site.config.ts`
 
-## Potential Next Steps
+If the repository name changes later, update the exported value in `site.config.ts` to match the new repo name.
 
-- Add persistent backend APIs for projects, tasks, inspections, and issue records
-- Introduce authentication and role-based access
-- Add timeline drag-and-drop or schedule-baseline comparisons
-- Model subcontractors, RFIs, submittals, and change orders
-- Add audit logging and notification workflows
-- Replace static mock insights with real model-backed recommendations
+Example:
+
+```ts
+export const githubPagesBasePath = '/my-new-repo-name/'
+```
+
+For a user or organization site instead of a project site, set it to:
+
+```ts
+export const githubPagesBasePath = '/'
+```
